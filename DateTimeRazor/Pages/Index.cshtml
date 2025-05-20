@@ -1,29 +1,36 @@
 ﻿@page
+@using System.Globalization
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Hello</h1>
+    <h1 class="display-4 text-primary">Hello!</h1>
+    <br />
     @{
         DateTime? dateTime = DateTime.Now;
         int? dayOfYear = DateTime.Now.DayOfYear;
-        DayOfWeek dayOfWeek = DateTime.Now.DayOfWeek;
         string? time = DateTime.Now.ToShortTimeString();
+
+
+        DayOfWeek dayOfWeek = DateTime.Now.DayOfWeek;
+        //CultureInfo cultureInfo = CultureInfo.CurrentCulture;
+        //string? dayOfWeek = cultureInfo.DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek);
+
         Random rnd = new Random();
         int randomNumber = rnd.Next(-1000, 1000);
     }
-    <div>
-        <h2>Task 2</h2>
+    <div class="text-primary">
+        <h3>Task 2</h3>
         <span>Hello! Current time is - @time</span>
         <hr />
-        <h2>Task 3</h2>
+        <h3>Task 3</h3>
         <span>Current day and time is - @dateTime</span>
         <br />
         <span>Today is <b>@dayOfWeek</b> and it's <b>@dayOfYear</b> day of year!</span>
         <hr />
-        <h2>Task 4</h2>
+        <h3>Task 4</h3>
         <span>Random number = @randomNumber</span>
     </div>
     
