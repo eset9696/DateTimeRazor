@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Hello</h1>
+    @{
+        DateTime? dateTime = DateTime.Now;
+        int? dayOfYear = DateTime.Now.DayOfYear;
+        DayOfWeek dayOfWeek = DateTime.Now.DayOfWeek;
+        string? time = DateTime.Now.ToShortTimeString();
+        Random rnd = new Random();
+        int randomNumber = rnd.Next(-1000, 1000);
+    }
+    <div>
+        <h2>Task 2</h2>
+        <span>Hello! Current time is - @time</span>
+        <hr />
+        <h2>Task 3</h2>
+        <span>Current day and time is - @dateTime</span>
+        <br />
+        <span>Today is <b>@dayOfWeek</b> and it's <b>@dayOfYear</b> day of year!</span>
+        <hr />
+        <h2>Task 4</h2>
+        <span>Random number = @randomNumber</span>
+    </div>
+    
+</div>
